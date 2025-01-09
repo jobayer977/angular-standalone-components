@@ -5,11 +5,15 @@ import { NgModule } from '@angular/core';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
   },
   {
     path: 'task',
-    loadChildren: () => import('./task/task.module').then(m => m.TaskModule)
+    loadComponent: () => import('./task/task.component').then(m => m.TaskComponent)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   }
 ];
 @NgModule({
