@@ -4,9 +4,13 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
     path: 'task',
     loadChildren: () => import('./task/task.module').then(m => m.TaskModule)
-}
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
